@@ -1,0 +1,27 @@
+[
+  {
+    "id": "1",
+    "name": "Premimum Wedding Shoot",
+    "desc": "In this package I will cover the whole wedding event. The package include of unlimited pictere of bride and groom. And in addition I will edit 50 picture of your choice.",
+    "price": 4500,
+    "ratings": 4,
+    "img": "./images/service/service1"
+  },
+  {
+    "id": "2",
+    "name": "Premimum Couple Shoot",
+    "desc": "In this package I will give you service for 2 days in different places. The package include of unlimited pictere of couple in different angle and shoot can be done in different location of your choice. And in addition I will edit 100 picture of your choice.",
+    "price": 5000,
+    "ratings": 4,
+    "img": "./images/service/service1"
+  },
+  {
+    "id": "3",
+    "name": "Premimum Couple Shoot Outdoor",
+    "desc": "In this package I will give you service for 3 days in different places. The package include of unlimited pictere of couple in different angle and shoot can be done in different location of your choice. And in addition I will edit 150 picture of your choice.",
+    "price": 8000,
+    "ratings": 4,
+    "img": "./images/service/service1"
+  }
+  
+]

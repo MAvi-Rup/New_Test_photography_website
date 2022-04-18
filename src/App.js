@@ -7,6 +7,9 @@ import AboutMe from './Pages/Home/AboutMe/AboutMe';
 import Blogs from './Pages/Home/Blogs/Blogs';
 import SignIn from './Pages/Login/SignIn/SignIn';
 import SignUp from './Pages/Login/SignUp/SignUp';
+import Checkout from './Pages/Home/Checkout/Checkout';
+import RequireAuth from './Pages/Login/Requireauth/RequireAuth';
+import NotFound from './Pages/Shared/NotFound/NotFound';
 
 function App() {
   return (
@@ -19,8 +22,13 @@ function App() {
         <Route path='/blog' element={<Blogs></Blogs>}></Route>
         <Route path='/signin' element={<SignIn></SignIn>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
+        <Route path="/checkout" element={
+          <RequireAuth>
+            <Checkout></Checkout>
+          </RequireAuth>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
-      
+
     </div>
   );
 }

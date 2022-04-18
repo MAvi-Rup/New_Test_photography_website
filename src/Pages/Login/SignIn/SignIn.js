@@ -1,6 +1,5 @@
-
 import React, { useRef } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import {Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
@@ -29,9 +28,6 @@ const SignIn = () => {
     }
     let from = location.state?.from?.pathname || '/';
     
-    const handleNavigate = () => {
-        navigate('/signup')
-    }
     if (user) {
         navigate(from, { replace: true })
     }
@@ -55,7 +51,7 @@ const SignIn = () => {
                     Submit
                 </button>
             </Form>
-            <p>New to Moments  <Link to='/signup' className='text-info pe-auto text-decoration-none' onClick={handleNavigate}>Please Register</Link></p>
+            <p>New to Moments  <Link to='/signup' className='text-info pe-auto text-decoration-none'>Please Register</Link></p>
             <SocialLogin></SocialLogin>
         </div>
     );

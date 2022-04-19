@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useNavigate } from 'react-router-dom';
+import Checkout from '../Checkout/Checkout';
 
 const Service = ({ service }) => {
     const { img, id, desc, ratings, price, name } = service
@@ -22,7 +23,7 @@ const Service = ({ service }) => {
 
                 </div>
                 <div className="card-footer">
-                    <button onClick={navigateCheckout} className="btn btn-primary">Chcekout</button>
+                    <button onClick={()=>{navigateCheckout(<Checkout key={id} service={service}></Checkout>)}} className="btn btn-primary">Chcekout</button>
                 </div>
             </div>
         </div>

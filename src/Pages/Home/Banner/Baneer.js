@@ -15,8 +15,8 @@ const Baneer = () => {
                     alt="First slide"
                 />
                 <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h3>Some of my special clicks</h3>
+                    <p>This piece of masterpiece I alaways carry with me.</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -27,8 +27,8 @@ const Baneer = () => {
                 />
 
                 <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h3>Some of my special clicks</h3>
+                    <p>Jungle which i alawys love to go for travel and also for shoot.</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -39,9 +39,9 @@ const Baneer = () => {
                 />
 
                 <Carousel.Caption>
-                    <h3>Third slide label</h3>
+                    <h3>Some of my special clicks</h3>
                     <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        Wedding and Couple photography is one of my passion.
                     </p>
                 </Carousel.Caption>
             </Carousel.Item>

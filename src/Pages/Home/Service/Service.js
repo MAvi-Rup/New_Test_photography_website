@@ -17,7 +17,7 @@ const Service = ({ service }) => {
                 <img src={img} className="card-img-top" alt="Service Image" />
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
-                    <p className="card-text">Price: {price}</p>
+                    <p className="card-text fw-bold">Price: {price} BDT</p>
                     <p className="card-text">{desc}</p>
                     <small className="text-muted">Ratings: {ratings}</small>
 

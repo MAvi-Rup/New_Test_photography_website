@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import {Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword} from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
@@ -17,7 +18,9 @@ const SignIn = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
-    if (loading) {
+   
+    const [sendPasswordResetEmail, sending, gerror] = useSendPasswordResetEmail(auth);
+    if (loading || sending) {
         return <Loading></Loading>
     }
     const handleSubmit = e => {
@@ -27,9 +30,23 @@ const SignIn = () => {
         signInWithEmailAndPassword(email, password)
     }
     let from = location.state?.from?.pathname || '/';
+    let errorElement;
     
     if (user) {
         navigate(from, { replace: true })
+    }
+    if (error|| gerror) {
+        errorElement = <p className='text-danger'>Error: {error?.message}{gerror?.message}</p>
+    }
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Sent email');
+        }
+        else{
+            toast('please enter your email address');
+        }
     }
     return (
         <div className='container w-50 mx-auto mt-2'>
@@ -50,6 +67,8 @@ const SignIn = () => {
                 <button className='text-center btn btn-primary btn-lg fw-bold' type="submit">
                     Submit
                 </button>
+                <p>Forget Password? <button className='btn btn-link text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button> </p>
+                {errorElement}
             </Form>
             <p>New to Moments  <Link to='/signup' className='text-info pe-auto text-decoration-none'>Please Register</Link></p>
             <SocialLogin></SocialLogin>
